@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FollowGPS</string>
+    <string name="head">FollowGPS</string>
+    <string name="user">Username</string>
+    <string name="pass">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="regis">REGISTER</string>
+    <string name="fname">ชื่อจริง</string>
+    <string name="lname">นามสกุล</string>
+    <string name="gender">เพศ</string>
+    <string name="idcard">รหัสบัตรประชาชน</string>
+    <string name="idmoto">ทะเบียนรถจักรยานยนต์</string>
+    <string name="phone">เบอร์โทรศัพท์</string>
+    <string name="viewinfo">ตรวจสอบข้อมูลส่วนตัว</string>
+    <string name="addinfo">แก้ไขข้อมูลส่นตัว</string>
+    <string name="map">ตรวจสอบตำแหน่งรถจักรยานยนต์</string>
+</resources>
