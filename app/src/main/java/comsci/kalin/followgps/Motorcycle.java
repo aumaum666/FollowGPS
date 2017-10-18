@@ -36,9 +36,9 @@ public class Motorcycle {
             if (objCursor != null){
                 if (objCursor.moveToFirst()){
                     strviewMoAll = new String[3];
-                    strviewMoAll[0] = objCursor.getString(objCursor.getColumnIndex(B_ID));
-                    strviewMoAll[1] = objCursor.getString(objCursor.getColumnIndex(B_MOTOB));
-                    strviewMoAll[2] = objCursor.getString(objCursor.getColumnIndex(B_MOTOC));
+                    strviewMoAll[0] = objCursor.getString(0);
+                    strviewMoAll[1] = objCursor.getString(1);
+                    strviewMoAll[2] = objCursor.getString(2);
 
                 }
             }

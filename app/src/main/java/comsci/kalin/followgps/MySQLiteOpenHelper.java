@@ -30,7 +30,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String U_IDCARD = "Idcard";
     public static final String U_IDMOTO = "Idmoto";
     public static final String U_PHONE = "Phone";
-    public String CREATE_MEMBER ="create table "+TABLE+" ("+U_ID+" integer primary key autoincrement, "+U_USER+" text, "+U_PASSWORD+" text, "+U_FNAME+" text, "+U_LNAME+" text, "+U_GENDER+" text, "+U_IDCARD+" text, "+U_IDMOTO+" text, "+U_PHONE+" text);";
+    public static final String U_GPSPHONE = "Gpsphone";
+    public String CREATE_MEMBER ="create table "+TABLE+" ("+U_ID+" integer primary key autoincrement, "+U_USER+" text, "+U_PASSWORD+" text, "+U_FNAME+" text, "+U_LNAME+" text, "+U_GENDER+" text, "+U_IDCARD+" text, "+U_IDMOTO+" text, "+U_PHONE+" text, "+U_GPSPHONE+" text);";
 
     public static final String TABLE_B = "Motorcycle";
     public static final String B_ID = "_ID";

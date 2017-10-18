@@ -19,7 +19,8 @@
         <activity android:name=".ConnectMap" />
         <activity android:name=".MainMenu" />
         <activity android:name=".Register" />
-        <activity android:name=".ViewInfo"></activity>
+        <activity android:name=".ViewInfo" />
+        <activity android:name=".EditInfo"></activity>
     </application>
 
 </manifest>

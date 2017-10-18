@@ -8,14 +8,26 @@ import android.view.View;
 import android.widget.EditText;
 
 public class ConnectMap extends AppCompatActivity {
+    /*private Status objStatus;
+    private Member objMember;
+    String strView = getIntent().getStringExtra("userN2").trim();*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect_map);
+
+        //connectedSQLite();
+
     }
 
     public void runCallMap(View view){
+        /*String name = getIntent().getStringExtra("userN");
+        String[] strviewMAll = objMember.viewinfoMember(name);
+        String[] strStatus = objStatus.viewStatus(strviewMAll[7]);*/
+
+
+
 
         //Initial View
         EditText latitude = (EditText) findViewById(R.id.mapLat);
@@ -31,5 +43,10 @@ public class ConnectMap extends AppCompatActivity {
         startActivity(mapIntent);
 
     }  //runCallMap
+
+    /*private void connectedSQLite(){
+        objStatus = new Status(this);
+        objMember = new Member(this);
+    }*/
 
 }

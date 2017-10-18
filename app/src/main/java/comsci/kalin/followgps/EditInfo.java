@@ -1,42 +1,54 @@
 package comsci.kalin.followgps;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class ViewInfo extends AppCompatActivity {
-
+public class EditInfo extends AppCompatActivity {
     private Member objMember;
     private Motorcycle objMotorcycle;
-    String[] infoMo;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_info);
+        setContentView(R.layout.activity_edit_info);
+
         String strView = getIntent().getStringExtra("userN2").trim();
 
         connectedSQLite();
         view(strView);
 
 
-        TextView titleTextView = (TextView) findViewById(R.id.textView13);
+        TextView titleTextView = (TextView) findViewById(R.id.textView15);
         titleTextView.setText(strView +" กำลังใช้งานอยู่");
-
     }
 
     public void view(String strView){
         String[] strviewMAll = objMember.viewinfoMember(strView);
-        String[] strviewMoAll = objMotorcycle.viewinfoMoto(strviewMAll[7]);
+
+        EditText titleEditText = (EditText) findViewById(R.id.editText12);
+        titleEditText.setText(strviewMAll[1]);
+        EditText titleEditText1 = (EditText) findViewById(R.id.editText13);
+        titleEditText1.setText(strviewMAll[2]);
+        EditText titleEditText2 = (EditText) findViewById(R.id.editText14);
+        titleEditText2.setText(strviewMAll[3]);
+        EditText titleEditText3 = (EditText) findViewById(R.id.editText15);
+        titleEditText3.setText(strviewMAll[4]);
+        EditText titleEditText4 = (EditText) findViewById(R.id.editText16);
+        titleEditText4.setText(strviewMAll[5]);
+        EditText titleEditText5 = (EditText) findViewById(R.id.editText17);
+        titleEditText5.setText(strviewMAll[6]);
+        EditText titleEditText6 = (EditText) findViewById(R.id.editText18);
+        titleEditText6.setText(strviewMAll[8]);
+        EditText titleEditText7 = (EditText) findViewById(R.id.editText19);
+        titleEditText7.setText(strviewMAll[9]);
 
 
-        TextView titleTextView = (TextView) findViewById(R.id.textView2);
-        titleTextView.setText("Username     : "+strviewMAll[1]);
+        /*TextView titleTextView = (TextView) findViewById(R.id.textView2);
+        titleTextView.setText(strviewMAll[1]);
         TextView titleTextView1 = (TextView) findViewById(R.id.textView4);
         titleTextView1.setText("Password    : "+strviewMAll[2]);
         TextView titleTextView2 = (TextView) findViewById(R.id.textView5);
@@ -56,21 +68,14 @@ public class ViewInfo extends AppCompatActivity {
         TextView titleTextView9 = (TextView) findViewById(R.id.textView12);
         titleTextView9.setText("ยี่ห้อรถจักยานยนต์     : "+strviewMoAll[1]);
         TextView titleTextView10 = (TextView) findViewById(R.id.textView14);
-        titleTextView10.setText("สีรถจักรยานยนต์     : "+strviewMoAll[2]);
+        titleTextView10.setText("สีรถจักรยานยนต์     : "+strviewMoAll[2]);*/
 
     }
 
 
     public void btnB(View view){
-        String name = getIntent().getStringExtra("userN2");
-        Intent intent = new Intent(ViewInfo.this, MainMenu.class);
-        intent.putExtra("userN", name);
-        startActivity(intent);
-    }
-
-    public void onClickEdit (View view) {
         String name = getIntent().getStringExtra("userN");
-        Intent intent = new Intent(ViewInfo.this, EditInfo.class);
+        Intent intent = new Intent(EditInfo.this, MainMenu.class);
         intent.putExtra("userN2", name);
         startActivity(intent);
     }
@@ -79,5 +84,4 @@ public class ViewInfo extends AppCompatActivity {
         objMember = new Member(this);
         objMotorcycle = new Motorcycle(this);
     }
-
 }

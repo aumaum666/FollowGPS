@@ -14,4 +14,5 @@
     <string name="viewinfo">ตรวจสอบข้อมูลส่วนตัว</string>
     <string name="addinfo">แก้ไขข้อมูลส่นตัว</string>
     <string name="map">ตรวจสอบตำแหน่งรถจักรยานยนต์</string>
+    <string name="gpsphone">เบอร์เชื่อมต่อ GPS</string>
 </resources>

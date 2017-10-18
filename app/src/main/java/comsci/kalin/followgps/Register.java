@@ -17,9 +17,11 @@ public class Register extends AppCompatActivity {
     EditText editText6;
     EditText editText7;
     EditText editText8;
-    String a,b,c,d,e,f,g,h;
+    EditText editText9;
+    String a,b,c,d,e,f,g,h,i;
     private Member objMember;
     private Motorcycle objMotorcycle;
+    private Status objStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class Register extends AppCompatActivity {
         editText6 = (EditText) findViewById(R.id.editText8);
         editText7 = (EditText) findViewById(R.id.editText9);
         editText8 = (EditText) findViewById(R.id.editText10);
+        editText9 = (EditText) findViewById(R.id.editText11);
         a = editText.getText().toString();
         b = editText2.getText().toString();
         c = editText3.getText().toString();
@@ -46,10 +49,12 @@ public class Register extends AppCompatActivity {
         f = editText6.getText().toString();
         g = editText7.getText().toString();
         h = editText8.getText().toString();
+        i = editText9.getText().toString();
 
 
-        objMember.addNewMember(a,b,c,d,e,f,g,h);
-        objMotorcycle.addNewMoto(g,null,null);
+        objMember.addNewMember(a,b,c,d,e,g,f,h,i);
+        objMotorcycle.addNewMoto(g,"-","-");
+        objStatus.addNewStatus(g,"-","13.765072","100.538479","-","-");
 
         Toast.makeText(getApplicationContext(), "Register Complete", Toast.LENGTH_LONG).show();
 
@@ -63,6 +68,7 @@ public class Register extends AppCompatActivity {
     private void connectedSQLite(){
         objMember = new Member(this);
         objMotorcycle = new Motorcycle(this);
+        objStatus = new Status(this);
     }
 
 }

@@ -20,6 +20,7 @@ public class Member {
     public static final String U_IDCARD = "Idcard";
     public static final String U_IDMOTO = "Idmoto";
     public static final String U_PHONE = "Phone";
+    public static final String U_GPSPHONE = "Gpsphone";
 
     public Member(Context context){
         objMySQLiteOpenHelper = new MySQLiteOpenHelper(context);
@@ -27,7 +28,7 @@ public class Member {
         readSqLiteDatabase = objMySQLiteOpenHelper.getReadableDatabase();
     }
 
-    public long addNewMember (String strUser, String strPassword, String strFirstname, String strLastname, String strGender, String strIdmoto, String strIdcard, String strPhone){
+    public long addNewMember (String strUser, String strPassword, String strFirstname, String strLastname, String strGender, String strIdmoto, String strIdcard, String strPhone, String strGpsphone){
         ContentValues objContentValues = new ContentValues();
         objContentValues.put(U_USER, strUser);
         objContentValues.put(U_PASSWORD, strPassword);
@@ -37,16 +38,17 @@ public class Member {
         objContentValues.put(U_IDCARD, strIdcard);
         objContentValues.put(U_IDMOTO, strIdmoto);
         objContentValues.put(U_PHONE, strPhone);
+        objContentValues.put(U_GPSPHONE, strGpsphone);
         return readSqLiteDatabase.insert(TABLE, null, objContentValues);
     }
 
     public String[] viewinfoMember(String strView){
         try {
             String[] strviewMAll = null;
-            Cursor objCursor = readSqLiteDatabase.query(TABLE, new String[]{U_ID,U_USER, U_PASSWORD, U_FNAME, U_LNAME, U_GENDER, U_IDCARD, U_IDMOTO, U_PHONE},U_USER+"=?",new String[]{String.valueOf(strView)},null,null,null,null);
+            Cursor objCursor = readSqLiteDatabase.query(TABLE, new String[]{U_ID,U_USER, U_PASSWORD, U_FNAME, U_LNAME, U_GENDER, U_IDCARD, U_IDMOTO, U_PHONE, U_GPSPHONE},U_USER+"=?",new String[]{String.valueOf(strView)},null,null,null,null);
             if (objCursor != null){
                 if (objCursor.moveToFirst()){
-                    strviewMAll = new String[9];
+                    strviewMAll = new String[10];
                     strviewMAll[0] = objCursor.getString(0);
                     strviewMAll[1] = objCursor.getString(1);
                     strviewMAll[2] = objCursor.getString(2);
@@ -56,6 +58,7 @@ public class Member {
                     strviewMAll[6] = objCursor.getString(6);
                     strviewMAll[7] = objCursor.getString(7);
                     strviewMAll[8] = objCursor.getString(8);
+                    strviewMAll[9] = objCursor.getString(9);
 
                 }
             }
